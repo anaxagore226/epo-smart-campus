@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Palette issue du design Figma « EPO SMART CAMPUS ». */
+@theme {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-ink: #17221e;
+  --color-canvas: #f6f8f7;
+  --color-line: #e2e8e4;
+  --color-line-strong: #dfe6e2;
+  --color-track: #edf1ef;
+  --color-surface: #f1f4f2;
+  --color-muted: #748079;
+  --color-subtle: #8a948e;
+  --color-faint: #929b96;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-forest-950: #0c2d22;
+  --color-forest-900: #11392d;
+  --color-forest-800: #17372d;
+  --color-brand: #27825b;
+  --color-brand-chart: #23845a;
+  --color-eyebrow: #36815f;
+  --color-mint: #e4f5eb;
+  --color-mint-ink: #197048;
+  --color-online: #2ead6f;
+  --color-lime: #b9f227;
+  --color-danger: #ef6a49;
+
+  --shadow-soft: 0 8px 30px rgba(27, 55, 44, 0.04);
+
+  --animate-toast-in: toast-in 0.25s ease-out;
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
   }
 }
 
+@utility panel {
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-line);
+  background-color: #fff;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+button {
+  cursor: pointer;
 }
